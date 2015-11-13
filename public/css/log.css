@@ -1,0 +1,147 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+/*    margin-top: 150px; */
+    text-align: center;
+}
+
+#middle .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+    
+}
+
+#bottom
+{
+    /* shrink bottom's font size */
+    font-size: smaller;
+
+    /* surround with whitespace */
+    margin: 20px;
+    clear: left;
+}
+
+h1
+{
+	font-family: "Ubuntu", sans-serif;
+	color: #0f647c;
+}
+
+form
+{
+	margin: 50px;
+    float: left;
+    border: 1px solid #ababab;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.form-group
+{
+	margin-bottom: 20px;
+}
+
+
+/*
+*   top
+*/
+
+#top {
+    padding: 50px;
+
+}
+
+#top ul {
+    list-style-type: none;
+    text-align: right;
+    float: right;
+    display: inline-block;
+    text-transform: uppercase;
+    
+}
+
+#top ul li {
+    display: inline;
+    padding: 10px;
+}
+
+#top ul li a {
+    color: #2fc3d4;
+    padding: 10px; 
+}
+
+#top ul li a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #2fc3d4;
+}
+
+
+/*
+*
+*	BUTTON
+*
+*/
+.btn
+{
+	margin: 10px;
+	background: none;
+	border: 1px solid #ababab;
+	color: #ababab;
+	padding: 10px;
+	width: 150px;
+	border-radius: 10px;
+}
+
+.btn:hover
+{
+	background-color: #0f647c;
+	color: white;
+	border: none;
+}
+
+/*
+*
+*	INPUT FIELD
+*
+*/
+input
+{
+	border-radius: 5px;
+	border: 1px solid #ababab;
+	padding: 5px;
+	width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
