@@ -1,0 +1,58 @@
+/**
+ *	homepage.css
+ *	CSS styles for Balance homepage
+ *
+ */
+
+
+h1 {
+ 	font-family: "Ubuntu", sans-serif;
+}
+
+img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/*
+*   top
+*/
+
+#top {
+    padding: 50px;
+
+}
+
+#top ul {
+    list-style-type: none;
+    text-align: right;
+    float: right;
+    display: inline-block;
+    text-transform: uppercase;
+    
+}
+
+#top ul li {
+    display: inline;
+    padding: 10px;
+}
+
+#top ul li a {
+    color: #2fc3d4;
+    padding: 10px; 
+}
+
+#top ul li a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #2fc3d4;
+}
+
+
+
+/******************************/
+
+
+
+
+
+
