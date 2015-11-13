@@ -7,15 +7,13 @@
 
 	// configuration
 	require("../includes/config.php");
-
-	// function to render the header, footer, etc.
-	require("../includes/render_home.php");
+	require("../includes/render_log.php");
 
 	// if user reached page via GET...
 	if($_SERVER["REQUEST_METHOD"] == "GET")
 	{
 		// render the custom hompage HTML
-		render("homepage.php", ["title" => "Welcome to Balance"]);
+		render("login_form.php", ["title" => "Log In"]);
 	}
 
 	// else if user reached page via POST
