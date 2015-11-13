@@ -1,67 +1,53 @@
-<?php
-	/**
-	 *	index.php
-	 *	loads the default home page for Balance
-	 *
-	 */
+<!DOCTYPE html>
+<html>
+	<head>
 
-	// configuration
-	require("../includes/config.php");
+		<!-- various libraries -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-	// function to render the header, footer, etc.
-	require("../includes/render-home.php");
+        <!-- CSS -->
+        <link href="/css/homepage.css" rel="stylesheet"/>
 
-	// if user reached page via GET...
-	if($_SERVER["REQUEST_METHOD"] == "GET")
-	{
-		// render the custom hompage HTML
-		render("homepage.php", ["title" => "Welcome to Balance"]);
-	}
+        <!-- fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
-	// else if user reached page via POST
-	else if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
-		// validate submission
-		if(empty($_POST["username"]) )
-		{
-			apologize("Please provide a username.");
-		}
-		else if(empty($_POST["password"]) )
-		{
-			apologize("Please enter your password.");
-		}
+    	<!-- scripts -->
+    	<script src="/js/jquery-1.11.1.min.js"></script>
+        <script src="/js/jquery.leanModal.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
 
-		// query database for user
-		$rows = query("SELECT * FROM users WHERE username = ?", $_POST["username"] );
+        <title>Welcome to Balance</title>
 
-		// if user found, check password
-		if(count($rows) == 1)
-		{
-			$row = $rows[0];
+	</head>
 
-			// compare hash
-			if(crypt($_POST["password"], $row["hash"]) == $row["hash"] )
-			{
-				// log in user and store user's ID in session
-				$_SESSION["id"] = $row["id"];
+	<body>
+	
+        <div class="container">
+	        <div id="top">
+	            <ul>
+	                <li><a href="/"> Home </a></li>
+	                <li><a href="login.php"> Sign In </a></li>
+	                <li><a href="register.php"> Register </a></li>
+	                </ul>
+	        </div>
+            
+            <div class="middle">
+	            <div>
+	                <img src="/img/group.jpg" alt="A group of people"/>
+	            </div>
 
-				// redirect to dashboard
-				redirect("dashboard.php");
-			}
-		}
-	}
+	            <h1>Welcome to Balance</h1>
+	            <h2>Making your accounting tasks easier (and fun!)</h2>
 
+	            <div id="features">
+	                <h2>Here's why you'll love Balance</h2>
+	            </div>
+	        </div>
 
+        </div>
+	
+	</body>
+</html>    
 
-
-
-
-
-
-
-
-
-
-
-
-?>
