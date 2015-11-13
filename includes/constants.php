@@ -10,7 +10,7 @@
 	**/
 
 	// database name
-	define("DATABASE", "finalProj");
+	define("DATABASE", "project");
 
 	// database password
 	define("PASSWORD", "crimson");
