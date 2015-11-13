@@ -1,4 +1,11 @@
+            </div>
 
+            <div id="bottom">
+                Copyright &#169; cy930
+            </div>
 
-	</body>
+        </div>
+
+    </body>
+
 </html>
