@@ -1,9 +1,15 @@
 <?php
 	/**
 	 *	logout.php
-	 *	configures the logging out of user.
-	 *
+	 *	configures the logout page.
 	 */
+	
+	// configuration
+	require("../includes/config.php");
+	
+	logout();
+	
+	redirect("/login.php");
 
 
 ?>
