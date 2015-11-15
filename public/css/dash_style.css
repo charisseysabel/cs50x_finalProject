@@ -1,0 +1,110 @@
+/**
+ *	dash_style.css
+ *	render default style for the dashboard
+ *	particularly the menu panel.
+ */
+
+
+ 
+/**
+ *	LAYOUT
+ *
+ */
+ 
+.menu_panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+	width: 230px;    
+	height: 100%;
+	background-color: #004c4c;
+	color: white;
+}
+
+.canvas {
+    padding: 10px;
+    margin-left: 230px;
+    height: 100%;
+    width: auto;
+    position: relative;
+    overflow: auto;
+    z-index: 1;
+}
+
+
+/**
+ *  fixed menu panel
+ */
+
+.menu_panel ul {
+    margin-top: 100px;
+	list-style-type: none;
+	text-transform: uppercase;
+	padding: 0;
+}
+
+.menu_panel ul li {
+	padding: 10px;
+}
+
+.menu_panel ul li a {
+	color: white;
+	padding: 10px;
+}
+
+.menu_panel ul li:hover {
+    background-color: #0f7abf;
+}
+
+.menu_panel ul li a:hover {
+    text-decoration: none;
+}
+
+/*
+.menu_panel ul li a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #ababab;
+    
+}
+*/
+
+#extra_options ul{
+    padding: 0;
+    margin: 280px 0 0 0;
+    width: 230px;
+}
+
+
+#extra_options ul li a{
+    border-bottom: none;
+}
+
+#extra_options ul li a:hover {
+    border-bottom: none;
+}
+
+/**
+ *  CANVAS
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
