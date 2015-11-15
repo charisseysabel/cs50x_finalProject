@@ -2,10 +2,14 @@
 
     <div id="menu">
         <ul>
-            <li>Home</li>
-            <li>Sign In</li>
-            <li>Register</li>
+            <li><a href="login.php"> Home </a></li>
+            <li><a href="#"> Sign In </a></li>
+            <li><a href="#"> Register </a></li>
             </ul>
+    </div>
+
+    <div>
+        <img src="/img/group.jpg" alt="A group of people"/>
     </div>
 
     <h1>Welcome to Balance</h1>
