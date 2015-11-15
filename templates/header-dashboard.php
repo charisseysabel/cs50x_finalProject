@@ -5,7 +5,14 @@
 		<!-- various CSS files/libraries -->
 		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
+
+        <!-- CSS -->
+        <link href="/css/dash_style.css" rel="stylesheet"/>
+        
+        <!-- fonts -->
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
 
         <!-- set the title dynamically through PHP -->
         <?php if(isset($title)): ?>
@@ -17,24 +24,58 @@
     	<!-- scripts -->
     	<script src="/js/jquery-1.11.1.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        
+        <!-- chart.js by Nick Downie -->
+        <script src="/js/Chart.js"></script>
+        <script src="/js/Chart.min.js"></script>
+        <script src="/js/cash_chart.js"></script>
 
 	</head>
 
 	<body>
 
-        <div id="dash_menu">
-            <ul>
-                <li>Dashboard</li>
-                <li>Transactions</li>
-                <li>Calendar</li>
-                <li>Cashflow</li>
-                <li>Settings</li>
-            </ul>
-        </div>
+           		<div class="menu_panel">
+           			<div id="menu">
+		                <ul>
+		                    <li><a href="dashboard.php"> Dashboard </a></li>
+		                    <li><a href="cashflow.php"> Cashflow </a></li>
+		                    <li><a href="inventory.php"> Inventory </a></li>
+		                    <li><a href="transactions.php"> Transactions </a></li>
+		                    <li><a href="calendar.php"> Calendar </a></li>
 
-        <div id="options">
-            <ul>
-                <li>Settings</li>
-                <li>Logout</li>
-            </ul>
-        </div>
+		                </ul>
+                	</div>
+                	
+                	<div id="extra_options">
+		                <ul>
+		                    <li><a href="settings.php"> Settings </a></li>
+		                    <li><a href="logout.php"> Logout </a></li>
+		                </ul>
+                	</div>
+           		</div>
+           		
+           		<!-- dynamic content starts here -->
+           		<div class="canvas">
+           		
+           		
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            
+            
+            
+            
+            
+            
