@@ -6,14 +6,16 @@
 		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-        <!-- CSS -->
-        <link href="/css/dash_style.css" rel="stylesheet"/>
-        
         <!-- fonts -->
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
-
+        <!-- dashboard styles -->
+        <link href="/css/dash_style.css" rel="stylesheet"/>
+        
+        <!-- inventory styles -->
+        <link href="/css/inv_style.css" rel="stylesheet" />
+        
         <!-- set the title dynamically through PHP -->
         <?php if(isset($title)): ?>
         	<title>CS50x: Balance | <?= htmlspecialchars($title) ?></title>
@@ -25,10 +27,10 @@
     	<script src="/js/jquery-1.11.1.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         
-        <!-- chart.js by Nick Downie -->
-        <script src="/js/Chart.js"></script>
-        <script src="/js/Chart.min.js"></script>
-        <script src="/js/cash_chart.js"></script>
+      <!-- CASHFLOW TAB: chart.js by Nick Downie -->
+      <script src="/js/Chart.js"></script>
+      <script src="/js/Chart.min.js"></script>
+      <script src="/js/cash_chart.js"></script>
 
 	</head>
 

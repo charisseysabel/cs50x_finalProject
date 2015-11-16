@@ -17,7 +17,7 @@
     left: 0;
 	width: 230px;    
 	height: 100%;
-	background-color: #004c4c;
+	background-color: #2b2b2b;
 	color: white;
 }
 
@@ -60,14 +60,6 @@
     text-decoration: none;
 }
 
-/*
-.menu_panel ul li a:hover {
-    text-decoration: none;
-    border-bottom: 1px solid #ababab;
-    
-}
-*/
-
 #extra_options ul{
     padding: 0;
     margin: 280px 0 0 0;
@@ -84,8 +76,18 @@
 }
 
 /**
- *  CANVAS
+ *  canvas
  */
+
+.canvas {
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Ubuntu", sans-serif;
+    color:  #e9662c; 
+}
+
 
 
 
