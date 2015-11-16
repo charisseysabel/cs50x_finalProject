@@ -1,0 +1,58 @@
+/**
+ *  inv_style.css
+ *  styles for the inventory page
+ */
+ 
+.search_form {
+    width: 200px;
+    float: left;
+}
+
+.tbl_btn {
+    float: right;
+}
+
+.btn {
+    background: none;
+    margin-right: 5px;
+    color:  #ababab;
+    width: 80px;
+}
+
+.btn:hover{
+    background: none;
+    color: #0f7abf;
+}
+
+table {
+    clear: both;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+/**
+ *  add form styles
+ */
+.form-group {
+    width: 200px;
+}
+
+p {
+    color: #ababab;
+    font-size: smaller;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
