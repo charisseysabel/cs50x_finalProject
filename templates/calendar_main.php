@@ -3,4 +3,10 @@
     main content for the calendar tab (HTML)
 -->
 
-you're now viewing the calendar tab.
+<div class="mid">
+    <h1>Calendar</h1>
+
+    <div class="content">
+        
+    </div>
+</div>
