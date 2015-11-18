@@ -22,7 +22,7 @@
 	            "retail_price" => number_format($info["retail_price"], 2),
 	            "supplier_name" => $info["supplier_name"],
 	            "supplier_contact" => $info["supplier_contact"],
-	            "category" => $info["category"]
+	            "category" => $info["category"],
 	        ];
 	    }
 	    
