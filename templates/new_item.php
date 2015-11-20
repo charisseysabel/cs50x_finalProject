@@ -20,21 +20,17 @@
 		    </div>
 		    <div class="form-group">
 		        <select class="form-control" name="category">
-		            <option disabled selected value>Category</option>
-		            <option value="caffeteria">Caffeteria</option>
-		            <option value="food">Food</option>
-		            <option value="drinks">Drinks</option>
+		            <option disabled selected value>Sort by Category</option>
+		            <option value="Caffeteria">Caffeteria</option>
+		            <option value="Food">Food</option>
+		            <option value="Drinks">Drinks</option>
 		        </select>
 		    </div>
-		
-		
+				
 		    <div class="form-group">
 			    <input class="form-control" name="supName" placeholder="Supplier's name" type="text"/>
 		    </div>
-		    <div class="form-group">
-			    <input class="form-control" name="supNumber" placeholder="Supplier's number" type="text"/>
-		    </div>
-		
+
 		    <div class="form-group">
 			    <button type="submit" class="btn btn-default">Add</button>
 		    </div>
