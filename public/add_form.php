@@ -1,7 +1,7 @@
 <?php
 	/**
 	 *	add_form.php
-	 *	configures the cashflow page.
+	 *	configures the added new item.
 	 */
 	
 	// configuration
@@ -16,76 +16,74 @@
 	}
 	else if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-	    //make sure all fields are filled
-	    if(empty($_POST["productName"]) || empty($_POST["unitPrice"]) || empty($_POST["retailPrice"]) ||
-	       empty($_POST["category"]) || empty($_POST["supName"]) || empty($_POST["supNumber"]) )
+	    // make sure product name field is filled
+	    if(empty($_POST["productName"]) )
 	    {
-	            apologize("Please fill in all fields.");
+	        apologize("Please provide a name");
+	    }	
+	    else
+	    {
+	        $add_product = query("INSERT INTO inventory (id, product) VALUES (?, ?)", $_SESSION["id"], $_POST["productName"] );
+	        if($add_product === false)
+		    {
+			    apologize("Error updating the database.");
+		    }
 	    }
-	    // make sure fields requiring numbers are indeed, numbers
-		else if( !is_numeric(intval($_POST["unitPrice"])) )
-		{
-			apologize("Unit price value is not a valid number.");
-		} 
-		else if(!is_numeric(intval($_POST["retailPrice"])) )
-		{
-			apologize("Retail price is not a valid number.");
-		}
-		else if(!is_numeric(intval($_POST["supNumber"])) )
-		{
-			apologize("Supplier's number is not a valid number.");
-		}
-		
-		// then finally add the item into the inventory database
-		$inv_update = query("INSERT INTO inventory (id, product, unit_price, retail_price, category, supplier_name, 
-			supplier_contact) VALUES(?, ?, ?, ?, ?, ?, ?)",
-			$_SESSION["id"], $_POST["productName"], $_POST["unitPrice"], $_POST["retailPrice"], $_POST["category"],
-			$_POST["supName"], $_POST["supNumber"] );
-		
-		if($inv_update === false)
-		{
-			apologize("Error updating the database.");
-		}
-		
+	    
+	    // check unit price
+	    if (!empty($_POST["unitPrice"]) && is_numeric(intval($_POST["unitPrice"])) )
+	    {
+	        $add_price = query("UPDATE inventory SET unit_price = ? WHERE product = ?", $_POST["unitPrice"], $_POST["productName"]);
+	        if($add_price === false)
+		    {
+		    	apologize("Error adding unit price.");
+		    }
+	    }
+	    
+	    // check retail price
+	    if (!empty($_POST["retailPrice"]) && is_numeric(intval($_POST["retailPrice"])) )
+	    {
+	        $add_retail = query("UPDATE inventory SET retail_price = ? WHERE product = ?", $_POST["retailPrice"], $_POST["productName"]);
+	        if($add_retail === false)
+		    {
+		    	apologize("Error adding retail price.");
+		    }
+	    }
+	   
+	    // check category
+	    if (!empty($_POST["category"]) )
+	    {
+	        $add_cat = query("UPDATE inventory SET category= ? WHERE product = ?", $_POST["category"], $_POST["productName"]);
+	        if($add_cat === false)
+		    {
+		    	apologize("Error adding category.");
+		    }
+	    }
+	    
+	    // check supplier name
+	    if (!empty($_POST["supName"]) )
+	    {
+	        $add_supName = query("UPDATE inventory SET supplier_name = ? WHERE product = ?", $_POST["supName"], $_POST["productName"]);
+	        if($add_supName === false)
+		    {
+		    	apologize("Error adding supplier name.");
+		    }
+	    }
+	    
+/*	    // check supplier number
+	    if (!empty($_POST["supNumber"]) && is_numeric($_POST["supNumber"]) )
+	    {
+	        $add_supNum = query("UPDATE inventory SET supplier_contact = ? WHERE product = ?", $_POST["supNumber"], $_POST["productName"]);
+	        if($add_supNum === false)
+		    {
+		    	apologize("Error adding supplier number.");
+		    }
+	    }
+*/
+	
+	
+	
 		redirect("inventory.php");
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
