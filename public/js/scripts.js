@@ -1,5 +1,6 @@
 /**
  *  scripts.js
+ *  scripts used for balance web app.
  *
  */
  
@@ -46,40 +47,61 @@ function date() {
 /**
  *  inventory 
  */
- 
-// configure typeahead
-    // https://github.com/twitter/typeahead.js/blob/master/doc/jquery_typeahead.md
-    $("#q").typeahead({
-        autoselect: true,
-        highlight: true,
-        minLength: 1
-    },
-    {
-        source: search,
-        templates: {
-            empty: "no places found yet",
-            suggestion: _.template("<p><%- <%- product%> </p>")
-        }
-    });
-    
-/**
- * Searches database for typeahead's suggestions.
- */
-function search(query, cb)
+
+function setFilter(name)
 {
-    // get places matching query (asynchronously)
-    var parameters = {
-        geo: query
-    };
-    $.getJSON("search.php", parameters)
-    .done(function(data, textStatus, jqXHR) {
-
-        // call typeahead's callback with search results (i.e., places)
-        cb(data);
-    })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-
-        // log error to browser's console
-        console.log(errorThrown.toString());
-    });
+    if(name == "")
+        return;
+	
+	// create new ajax obj
+	var ajax = new XMLHttpRequest();
+	
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState == 4 && ajax.status == 200) {
+			document.getElementById('inv_tbl').innerHTML = ajax.responseText;
+		}
+		else {
+			document.getElementById('inv_tbl').innerHTML = "<p>Loading...</p>";
+		}
+	};
+	
+	// open requested file
+	ajax.open('GET', name + '.php', true);
+	ajax.send();
 }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
