@@ -5,11 +5,14 @@
  
 .search_form {
     width: 200px;
-    float: left;
+    float: right;
+    margin-bottom: 30px;
 }
 
 .tbl_btn {
-    float: right;
+    float: left;
+    width: 350px;
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -19,15 +22,20 @@
     width: 80px;
 }
 
+#filter {
+    width: 100px;
+    display: inline-block;
+}
+
 .btn:hover{
     background: none;
     color: #0f7abf;
 }
 
-table {
+#inv_tbl{
     clear: both;
-    padding: 20px;
-    margin-top: 80px;
+    padding: 0;
+    margin: 0;
 }
 
 /**
