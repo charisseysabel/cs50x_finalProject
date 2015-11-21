@@ -13,8 +13,9 @@
         <!-- dashboard styles -->
         <link href="/css/dash_style.css" rel="stylesheet"/>
         
-        <!-- inventory styles -->
+        <!-- inventory styles + datatables css-->
         <link href="/css/inv_style.css" rel="stylesheet" />
+       <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10,r-2.0.0,rr-1.1.0,se-1.1.0/datatables.min.css"/> -->
         
         <!-- set the title dynamically through PHP -->
         <?php if(isset($title)): ?>
@@ -23,16 +24,16 @@
         	<title>CS50x: Balance</title>
     	<?php endif ?>
 
-    	<!-- scripts -->
+    	<!-- scripts + datatables-->
     	<script src="/js/jquery-1.11.1.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/scripts.js"></script>
-
+       <!-- <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10,r-2.0.0,rr-1.1.0,se-1.1.0/datatables.min.js"></script> -->
         
-      <!-- CASHFLOW TAB: chart.js by Nick Downie -->
-      <script src="/js/Chart.js"></script>
-      <script src="/js/Chart.min.js"></script>
-      <script src="/js/cash_chart.js"></script>
+        <!-- CASHFLOW TAB: chart.js by Nick Downie -->
+        <script src="/js/Chart.js"></script>
+        <script src="/js/Chart.min.js"></script>
+        <script src="/js/cash_chart.js"></script>
 
 	</head>
 
@@ -45,7 +46,7 @@
 		                    <li><a href="cashflow.php"> Cashflow </a></li>
 		                    <li><a href="inventory.php"> Inventory </a></li>
 		                    <li><a href="transactions.php"> Transactions </a></li>
-		                    <li><a href="calendar.php"> Calendar </a></li>
+		                    <li><a href="calendar.php"> Walkthrough </a></li>
 
 		                </ul>
                 	</div>
