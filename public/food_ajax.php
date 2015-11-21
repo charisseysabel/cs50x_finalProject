@@ -29,16 +29,18 @@
 
 ?>
 
-				<div id="inv_tbl">
+				 <div id="inv_tbl">
                 
                     <table class="table table-striped" id="tblSearch">
 	                    <thead>
 		                    <tr>
 			                    <th>Product Name</th>
+			                    <th>Supplier Name</th>
+			                    <th>Category</th>
 			                    <th>Unit Price</th>
 			                    <th>Retail Price</th>
-			                    <th>Supplier Name</th>			
-			                    <th>Category</th>
+			                    <th>Est. profit per unit</th>			
+			                    
 		                    </tr>
 	                    </thead>
 	
@@ -46,11 +48,12 @@
 	                        <?php foreach($allInfo as $info): ?>
 	                            <tr>
 	                                <td> <?= $info['product'] ?> </td>
-	                                <td>$ <?= $info["unit_price"] ?> </td>
-	                                <td>$ <?= $info["retail_price"] ?> </td>
 	                                <td> <?= $info["supplier_name"] ?> </td>
 	                                <td> <?= $info["category"] ?> </td>
-	                                <td> <input type="checkbox" id="checkbox[]" name="checkbox[]" value="<?= $info['product'] ?>"/> </td>
+	                                <td>$ <?= $info["unit_price"] ?> </td>
+	                                <td>$ <?= $info["retail_price"] ?> </td>
+	                                <td>$ <?= $info["unit_price"] - $info["retail_price"] ?></td>
+	                                
 	                            </tr>
 	                        <?php endforeach ?>
 
