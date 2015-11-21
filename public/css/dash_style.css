@@ -187,6 +187,41 @@ h2 {
 }
 
 /**
+ *  transactions tab
+ */
+ 
+#trans_date, #trans_cat {
+    font-style: italic;
+    color: #ababab;
+}
+
+#trans_name {
+    text-transform: uppercase;
+}
+
+.ajax_btn {
+    float: right;
+}
+
+.trans_btn {
+    margin-top: 10px;
+    clear: both;
+    float: right;
+}
+
+.trans_btn a {
+    padding: 12px;
+    color: #ababab;
+}
+
+.trans_btn a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #2fc3d4;
+    color: #2fc3d4;
+}
+
+
+/**
  *  settings tab
  */
 
