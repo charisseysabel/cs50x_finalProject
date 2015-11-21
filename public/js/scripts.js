@@ -10,6 +10,7 @@
  *  dashboard
  */
  
+// set time
 function time() {
     var curr_time = new Date();
     
@@ -37,6 +38,7 @@ function time() {
     document.getElementById("clock").firstChild.nodeValue = timeString;
 }
 
+// set date
 function date() {
     var curr_date = new Date();
     document.getElementById("date").innerHTML = curr_date.toDateString();
@@ -48,6 +50,8 @@ function date() {
  *  inventory 
  */
 
+
+// filter using ajax
 function setFilter(name)
 {
     if(name == "")
@@ -71,8 +75,38 @@ function setFilter(name)
 }
 
 
+/**
+ *  initialize data tables
+ */
  
 
+
+/**
+ *  transactions
+ */
+
+// income filter using ajax
+function setIncome(name)
+{
+    if(name == "")
+        return;
+        
+    // create new ajax obj
+    var inc_Ajax = new XMLHttpRequest();
+    
+    inc_Ajax.onreadystatechange = function() {
+        if(inc_Ajax.readyState == 4 && inc_Ajax.status == 200) {
+            document.getElementById('trans_tbl').innerHTML = inc_Ajax.responseText;
+        }
+        else {
+            document.getElementById('trans_tbl').innerHTML = "<p>Loading...</p>";
+        }
+    };
+    
+    // open requested file
+    inc_Ajax.open('GET', name + '.php', true);
+    inc_Ajax.send();
+}
 
 
 
