@@ -220,6 +220,17 @@ h2 {
     color: #2fc3d4;
 }
 
+/*link in rows for inventory and transactions tab*/
+.td_link a {
+    color: #ababab;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.td_link a:hover {
+    color: #2fc3d4;
+    text-decoration: none;
+}
 
 /**
  *  settings tab
