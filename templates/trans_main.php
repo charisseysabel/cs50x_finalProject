@@ -14,8 +14,6 @@
         	<!-- forms -->
         	<div class="trans_btn">
         		<a href="add_trans.php" type="button">Add</a>
-        		<a href="#"  type="button">Edit</a>    		
-        		<a href="#" type="button">Delete</a>
         	</div>
 
     	
@@ -45,6 +43,8 @@
 		                    <span id="trans_cat"><?= $data["trans_category"] ?></span>
 		                </td>
 		                <td>$ <?= $data["trans_amount"] ?> </td>
+		                <td> <span class="td_link"><a href="edit_trans.php?trans_name=<?=$data['trans_name']?>">Edit</a></span> </td>
+		                <td> <span class="td_link"><a href="del_trans.php?trans_name=<?=$data['trans_name']?>">Delete</a></span> </td>
 		            </tr>		        
 		        <?php endforeach ?>
 			</table>
@@ -61,6 +61,25 @@
 
 <script>
 // pie chart
+$(document).ready(function() {
+Array.prototype.mapProperty = function(property) {
+    return this.map(function(obj) {
+        return obj[property];  
+    });
+};
+
+var url = "json.php";
+var piedata = [];
+
+$.getJSON(url, function(data) {
+    $.each(data, function(i, val) {
+        piedata.push({
+            
+        });
+    });
+});
+
+
 	var data1 = [
         {
             value: 300,
@@ -92,4 +111,5 @@
     var myPie = new Chart(ctx1).Doughnut(data1, pieOptions);
 
     document.getElementById("js-legend").innerHTML = myPie.generateLegend();
+} );    
 </script>

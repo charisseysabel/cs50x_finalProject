@@ -16,7 +16,9 @@
 		                    <option value="caffe_ajax">Caffeteria</option>
 		                    <option value="food_ajax">Food</option>
 		                    <option value="drinks_ajax">Drinks</option>
-		            </select>                   
+		            </select>
+		            
+		            <input type="text" placeholder="Search..."/>                   
                 </div>
         
             <!-- search  -->
@@ -45,8 +47,9 @@
 	                                <td> <?= $info["category"] ?> </td>
 	                                <td>$ <?= $info["unit_price"] ?> </td>
 	                                <td>$ <?= $info["retail_price"] ?> </td>
-	                                <td>$ <?= $info["unit_price"] - $info["retail_price"] ?></td>
-
+	                                <td>$ <?= number_format(($info["unit_price"] - $info["retail_price"]), 2) ?></td>
+                                    <td> <span class="td_link"><a href="edit_inv.php?product=<?= $info['product']?>">Edit</a></span> </td>
+                                    <td> <span class="td_link"><a href="del_inv.php?product=<?= $info['product']?>">Delete</a></span></td>
 
 	                            </tr>
 	                        <?php endforeach ?>
