@@ -27,6 +27,7 @@
 	
 		// render the custom hompage HTML
 		render("trans_main.php", ["title" => "Transactions", "trans_all" => $trans_all ] );
+		
 	}
 
 ?>
