@@ -49,6 +49,9 @@
 		                    <span id="trans_cat"><?= $data["trans_category"] ?></span>
 		                </td>
 		                <td>$ <?= $data["trans_amount"] ?> </td>
+		                <td> <span class="td_link"><a href="edit_trans.php?trans_name=<?=$data['trans_name']?>">Edit</a></span> </td>
+		                <td> <span class="td_link"><a href="del_trans.php?trans_name=<?=$data['trans_name']?>">Delete</a></span> </td>
+		            </tr
 		            </tr>		        
 		        <?php endforeach ?>
 			</table>
