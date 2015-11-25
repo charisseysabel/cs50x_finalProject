@@ -3,15 +3,17 @@
  *  styles for the inventory page
  */
  
-.search_form {
-    width: 200px;
-    float: right;
+#search_form {
     margin-bottom: 30px;
+    float: right;
+    display: inline;    
 }
 
 .inv_btn {
     float: right;
-    margin-bottom: 30px;
+    width: 400px;
+    margin-bottom: 20px;
+    margin-top: 0;
     color: #ababab;
 }
 
@@ -20,8 +22,7 @@
     padding: 12px;
 }
 
-.inv_btn a:hover {
-    border-bottom: 1px solid #2fc3d4;
+.inv_btn a:hover, .inv_btn select:hover, .inv_btn #search_btn:hover {
     color: #2fc3d4;
     text-decoration: none;
 }
