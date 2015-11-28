@@ -3,7 +3,7 @@
  *  scripts used for balance web app.
  *
  */
- 
+
  
  
 /**
@@ -78,12 +78,28 @@ function setFilter(name)
 /**
  *  initialize data tables
  */
+
  
 
 
 /**
  *  transactions
  */
+ 
+// generate pie chart
+function search(query, cb) {
+    var parameters = { key: value };
+    
+    $.getJSON("json.php", parameters).done(function(data, textStatus, jqXHR) {
+        cb(data);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        console.log(errorThrown.toString() );
+    });
+}
+
+
+ 
 
 // income filter using ajax
 function setIncome(name)
@@ -107,6 +123,8 @@ function setIncome(name)
     inc_Ajax.open('GET', name + '.php', true);
     inc_Ajax.send();
 }
+
+
 
 
 
