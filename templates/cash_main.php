@@ -3,20 +3,71 @@
     main content for the cashflow tab (HTML)
 -->
 
-
-<!-- Create the chart here -->
-
 <div class="mid">
     <h1>Cashflow</h1>
+    <p></p>
 
     <div class="content">
-        <canvas id="myChart"> </canvas>
-        
-        <canvas id="expenses"></canvas>
-        <div id="js-legend">
-        
-        </div>
+        <canvas id="myChart"> </canvas>      
     </div>
+    
+    <!-- TABLE SUMMARY-->        
+        <table class="table table-striped" id="tblSearch">
+	        <thead>
+		        <tr>
+			        <th>Beginning Cash on Hand</th>
+			        <th>Total Income</th>
+			        <th>Total Expenses</th>
+			        <th>Ending Cash on Hand</th>
+		        </tr>
+	        </thead>
+	
+	         <tbody>
+	                         
+	            <tr>
+	                 <?php foreach($cash as $data): ?>
+	                    <td>$ <?= $data["cash_on_hand"] ?></td>
+	                 <?php endforeach ?>
+	                                
+	                 <?php foreach($stats as $info): ?>    
+	                     <td>$ <?= $info["SUM(trans_amount)"]?></td>
+	                 <?php endforeach ?>
+	                            
+	                     <td>$ profit</td>
+	            </tr>
+	                           
+	        </tbody>
+        </table>
+    
+    <!-- MONTH DETAILS -->   
+    <h3>Monthly Details</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Income</th>
+                    <th>Expense</th>
+                    <th>Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>November</td>
+                    <td>income for november</td>
+                    <td>expenses for november</td>
+                    <td>profit at the end of the month</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Average</td>
+                    <td>average income</td>
+                    <td>average expense</td>
+                    <td>average profit</td>
+                </tr>
+            </tfoot>
+        </table>
+    
 </div>
 
 
@@ -46,44 +97,10 @@
 	}
 	
 	var barOptions = {
-		animateScate:true
+		animateScale:false,
 	}
 	
 	var ctx = document.getElementById("myChart").getContext("2d");
 	new Chart(ctx).Bar(data);
-	
-	// pie chart
-	var data1 = [
-        {
-            value: 300,
-            color: "#F7464A",
-            highlight: "#ff5a5e",
-            label: "Red"
-        },
-        {
-            value: 50,
-            color: "#46bfbd",
-            highlight: "#5ad3d1",
-            label: "Green"
-        },
-        {
-            value: 100,
-            color: "#fdb45c",
-            highlight: "#ffc870",
-            label: "Yellow"
-        }
-    
-    ];
-
-    var pieOptions = {
-        tooltipTemplate: "<%= value %>%"      
-    }
-    
-    
-    var ctx1 = document.getElementById("expenses").getContext("2d");
-    var myPie = new Chart(ctx1).Doughnut(data1, pieOptions);
-
-    document.getElementById("js-legend").innerHTML = myPie.generateLegend();
-
 </script>
 
