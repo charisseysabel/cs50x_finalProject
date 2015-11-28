@@ -1,6 +1,9 @@
+<!--
+    login_form.php
+    login page
+-->
 
-
-
+    <div class="log_div">
     <form action="login.php" method="post">
         <fieldset>
             <div class="form-group">
@@ -14,3 +17,10 @@
             </div>
         </fieldset>
     </form>
+    
+    <p><a href="#">Forgot your password?</a></p>
+    <p><a href="register.php">Create a free account</a></p>
+    
+    </div>
+    
+    

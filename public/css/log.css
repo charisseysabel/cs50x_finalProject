@@ -1,115 +1,101 @@
 /**
- * styles.css
- *
- * Computer Science 50
- * Problem Set 7
- *
- * Global CSS.
+ * log.css
+ * css styles for the login/register pages
  */
 
-.container
-{
-    /* center contents */
-    margin-left: auto;
-    margin-right: auto;
-/*    margin-top: 150px; */
-    text-align: center;
+body {
+    font-family: "Source Sans Pro", sans-serif;
 }
 
-#middle .form-control
-{
-    /* center form controls */
-    display: inline-block;
-
-    /* override Bootstrap's 100% width for form controls */
-    width: auto;
-    
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Ubuntu", sans-serif;
 }
 
-#bottom
-{
-    /* shrink bottom's font size */
-    font-size: smaller;
-
-    /* surround with whitespace */
-    margin: 20px;
-    clear: left;
-}
-
-h1
-{
-	font-family: "Ubuntu", sans-serif;
-	color: #0f647c;
-}
-
-form
-{
-	margin: 50px;
-    float: left;
-    border: 1px solid #ababab;
-    padding: 30px;
-    border-radius: 5px;
-}
-
-.form-group
-{
-	margin-bottom: 20px;
-}
-
-
-/*
-*   top
+/**
+*   navbar
 */
 
-#top {
-    padding: 50px;
-
+#navigation {
+    height: 80px;
 }
 
-#top ul {
+.navbar-header {
+    margin-top: 10px;
+}
+
+
+#navbar ul {
     list-style-type: none;
     text-align: right;
     float: right;
     display: inline-block;
     text-transform: uppercase;
-    
+    margin-top: 30px;
 }
 
-#top ul li {
+#navbar ul li {
     display: inline;
+}
+
+#navbar ul li a{
+    color: #ffffff;
     padding: 10px;
-}
-
-#top ul li a {
-    color: #2fc3d4;
-    padding: 10px; 
-}
-
-#top ul li a:hover {
     text-decoration: none;
-    border-bottom: 2px solid #2fc3d4;
 }
 
+#navbar ul li a:hover {
+    text-decoration: none;
+    color: #2fc3d4;
+}
 
-/*
-*
+/**
+*   form
+*/
+
+.log_div {
+    width: 100%;
+    margin-top: 15%;
+    height: 300px;
+}
+
+.log_div .form-control, .log_div p a {
+    width: 300px;
+    height: 30px;
+    margin: 10px auto;
+    padding: 20px;
+    display: block;
+}
+
+.log_div p a {
+    text-align: center;
+    color: #2fc3d4;
+}
+
+.log_div p a:hover {
+    text-decoration: none;
+}   
+
+
+
+
+/**
 *	BUTTON
-*
 */
 .btn
 {
-	margin: 10px;
+	margin: 10px auto;
 	background: none;
 	border: 1px solid #ababab;
 	color: #ababab;
 	padding: 10px;
 	width: 150px;
 	border-radius: 10px;
+	display: block;
 }
 
 .btn:hover
 {
-	background-color: #0f647c;
+	background-color: #2fc3d4;
 	color: white;
 	border: none;
 }
@@ -123,7 +109,6 @@ input
 {
 	border-radius: 5px;
 	border: 1px solid #ababab;
-	padding: 5px;
 	width: 200px;
 }
 

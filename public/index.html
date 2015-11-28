@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- index.html
+		    balance web app homepage
+		    ADAPTED FROM TWITTER BOOTSTRAP'S JUMBOTRON THEME
+		-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    	<meta name="description" content="">
+    	<meta name="author" content="">
 
 		<!-- various libraries -->
 		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
@@ -24,29 +34,79 @@
 
 	<body>
 	
-        <div class="container">
-	        <div id="top">
-	            <ul>
-	                <li><a href="/"> Home </a></li>
-	                <li><a href="login.php"> Sign In </a></li>
-	                <li><a href="register.php"> Register </a></li>
-	                </ul>
-	        </div>
-            
-            <div class="middle">
-	            <div>
-	                <img src="/img/group.jpg" alt="A group of people"/>
-	            </div>
-
-	            <h1>Welcome to Balance</h1>
-	            <h2>Making your accounting tasks easier (and fun!)</h2>
-
-	            <div id="features">
-	                <h2>Here's why you'll love Balance</h2>
-	            </div>
-	        </div>
-
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">B A L A N C E</a>
         </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul>
+          	<li><a href="/">Home</a></li>
+          	<li><a href="login.php">Sign In</a></li>
+          	<li><a href="register.php">Register</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div> <!-- container collapse -->
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+      <div id="image">
+        <img src="/img/group.jpg" alt="A group of people" id="headerImg"/>
+        <h1>Welcome to Balance <br>
+            <span id="slogan">Accounting made easy</span>
+        </h1>
+        <p>Get started with a FREE account today <br>
+            <a href="register.php">Register &raquo;</a>
+        </p>
+      </div>
+    
+
+    <div class="container" id="features">
+    	<h2>Why you'll love Balance</h2>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="border col-md-3">
+          <img src="/img/cashflow.png" />
+          <h3>Monitor your cashflow</h3>
+          <p>Donec id elit non mi porta gravida at eget metus.</p>
+        </div>
+        <div class="border col-md-3">
+          <img src="/img/stats.png"/>
+          <h3>Visualize your data</h3>
+          <p>View your data as colorful graphs and charts.</p>
+       </div>
+        <div class="border col-md-3">
+          <img src="/img/stocks.png"/>
+          <h3>Manage your inventory</h3>
+          <p>Donec sed odio dui.</p>
+        </div>
+        <div class="border col-md-3">
+          <img src="/img/open.png"/>
+          <h3>Open source</h3>
+          <p>Backed by a community of developers with a passion for </p>
+        </div>
+      </div>
+
+      </div> <!-- /container -->
+	  
+	  <footer>
+	    <ul>
+	        <li><a href="#">About Us</a></li>
+	        <li><a href="#">Contact Us</a></li>
+	        <li><a href="#">Terms of Service</a></li>
+	        <li><a href="#">Privacy Policy</a></li>
+	    </ul>
+	  
+        <p id="copyright">&copy; 2015 Charisse De Torres | Balance</p>
+      </footer>
+
 	
 	</body>
 </html>    
