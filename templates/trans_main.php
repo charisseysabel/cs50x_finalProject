@@ -6,20 +6,26 @@
     <h1>Transactions</h1>
     
     <div class="content">
-    	<!-- ajax generated tabs -->
-    	<div class="ajax_btn">
-    	    <button onclick="setIncome(this.value);" class="btn btn-default" name="income_cat" id="income_cat" value="income_ajax">Income</button>
-    	    <button onclick="setIncome(this.value);" class="btn btn-default" name="expense_cat" id="expense_cat" value="expense_ajax">Expense</button>
-    	</div>
-        	<!-- forms -->
-        	<div class="trans_btn">
-        		<a href="add_trans.php" type="button">Add</a>
-        	</div>
+                <div class="inv_btn">
+                    <a href="add_income.php" type="button">Add Income</a>
+                    <a href="add_expense.php">Add Expense</a>
+                    
+                    <select name="filter" id="filter" onchange="setIncome(this.value);">
+		                    <option disabled selected value>Filter</option>
+		                    <option value="income_ajax">Income</option>
+		                    <option value="expense_ajax">Expense</option>
+		            </select>
+		            
+		            <form method="post" id="search_form" action="" >
+		                <input type="text" name="name" placeholder="Search transactions" id="searchbox"/>
+		                <input type="submit" name="submit" value="Search" id="search_btn"/>
+		            </form>                   
+                
+                </div>
 
-    	
-    	             
-        <canvas id="expenses"></canvas>
-		<div id="js-legend">
+    	<div id="canvas_div">             
+            <canvas id="expenses"></canvas>
+		    <canvas id="income"></canvas>
 		</div>
 		
 		<div id="trans_tbl">
@@ -35,16 +41,17 @@
 				    
 				<?php foreach($trans_all as $data): ?>
 		            <tr>
-		                <td><span id="trans_name"> <?= $data["trans_name"]?> </span> <br>
-		                    <span id="trans_date"> <?= $data["trans_time"]?> </span>
+		                <td><span class="trans_name"> <?= $data["trans_name"]?> </span> <br>
+		                    <span class="trans_date"> <?= $data["trans_time"]?> </span>
 		                </td>
 		                
 		                <td> <?= $data["trans_sub_cat"] ?> <br>
 		                    <span id="trans_cat"><?= $data["trans_category"] ?></span>
 		                </td>
 		                <td>$ <?= $data["trans_amount"] ?> </td>
-		                <td> <span class="td_link"><a href="edit_trans.php?trans_name=<?=$data['trans_name']?>">Edit</a></span> </td>
-		                <td> <span class="td_link"><a href="del_trans.php?trans_name=<?=$data['trans_name']?>">Delete</a></span> </td>
+		                <td> <span class="td_link"><a href="edit_trans.php?trans_name=<?=$data['trans_name']?>">Edit</a></span> <br>
+		                     <span class="td_link"><a href="del_trans.php?trans_name=<?=$data['trans_name']?>">Delete</a></span>
+		                </td>
 		            </tr>		        
 		        <?php endforeach ?>
 			</table>
@@ -60,56 +67,66 @@
 -->
 
 <script>
-// pie chart
+// get expenses category JSON data from transactions database
 $(document).ready(function() {
-Array.prototype.mapProperty = function(property) {
-    return this.map(function(obj) {
-        return obj[property];  
-    });
-};
-
-var url = "json.php";
-var piedata = [];
-
-$.getJSON(url, function(data) {
-    $.each(data, function(i, val) {
-        piedata.push({
-            
-        });
-    });
-});
-
-
-	var data1 = [
-        {
-            value: 300,
-            color: "#F7464A",
-            highlight: "#ff5a5e",
-            label: "Red"
-        },
-        {
-            value: 50,
-            color: "#46bfbd",
-            highlight: "#5ad3d1",
-            label: "Green"
-        },
-        {
-            value: 100,
-            color: "#fdb45c",
-            highlight: "#ffc870",
-            label: "Yellow"
-        }
+  $.getJSON("expenses_json.php", function (data) {
+    var exp_pieLabel = [], exp_pieValue = [];
+    for(i = 0; i < data.length; i++) {
     
-    ];
-
-    var pieOptions = {
-        tooltipTemplate: "<%= value %>%"      
+        exp_pieLabel.push(data[i].trans_sub_cat);
+        exp_pieValue.push(data[i].trans_amount);
     }
     
+    var expense_data = [];
+    for(i = 0; i < exp_pieLabel.length; i++)
+    {
+        // randomize colors
+        r = Math.floor(Math.random() * 250);
+        g = Math.floor(Math.random() * 300);
+        b = Math.floor(Math.random() * 250);
+        c = 'rgb(' + r + ',' + g + ',' + b + ')';
+        h = 'rgb(' + (r+20) + ',' + (g+20) + ',' + (b+20) + ')';
     
-    var ctx1 = document.getElementById("expenses").getContext("2d");
-    var myPie = new Chart(ctx1).Doughnut(data1, pieOptions);
+        expense_data.push({ value: exp_pieValue[i], color: c, highlight: h, label: exp_pieLabel[i] });
+    }
+    
+     var exp_pieOptions = { };
+       
+    var ctx_exp = document.getElementById("expenses").getContext("2d");
+    var expPie = new Chart(ctx_exp).Doughnut(expense_data, exp_pieOptions);
+    
+    //generate legend
+    //document.getElementById("js-legend").innerHTML = myPie.generateLegend();
+});    
+  
+  // get income JSON
+  $.getJSON("income_json.php", function (data) {
+    var inc_pieLabel = [], inc_pieValue = [];
+    for(i = 0; i < data.length; i++) {
+    
+        inc_pieLabel.push(data[i].trans_sub_cat);
+        inc_pieValue.push(data[i].trans_amount);
+    }
+    
+    var income_data = [];
+    for(i = 0; i < inc_pieLabel.length; i++)
+    {
+        // randomize colors
+        r = Math.floor(Math.random() * 250);
+        g = Math.floor(Math.random() * 300);
+        b = Math.floor(Math.random() * 250);
+        c = 'rgb(' + r + ',' + g + ',' + b + ')';
+        h = 'rgb(' + (r+20) + ',' + (g+20) + ',' + (b+20) + ')';
+    
+        income_data.push({ value: inc_pieValue[i], color: c, highlight: h, label: inc_pieLabel[i] });
+    }
+    
+     var pieOptions = { };
+       
+    var ctx_inc = document.getElementById("income").getContext("2d");
+    var incPie = new Chart(ctx_inc).Doughnut(income_data, pieOptions);
+  
+});
 
-    document.getElementById("js-legend").innerHTML = myPie.generateLegend();
-} );    
+});     
 </script>

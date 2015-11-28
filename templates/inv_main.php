@@ -6,59 +6,48 @@
 <div class="mid">
     <h1>Inventory</h1>
         <div class="content">
-            <!-- table buttons -->
-                <div class="inv_btn">
-                    <a href="add_form.php" type="button">Add</a>
-                    
-                    <select name="filter" id="filter" onchange="setFilter(this.value);">
-		                    <option disabled selected value>Filter</option>
-		                    <option value="allItems_ajax">All</option>
-		                    <option value="caffe_ajax">Caffeteria</option>
-		                    <option value="food_ajax">Food</option>
-		                    <option value="drinks_ajax">Drinks</option>
-		            </select>
-		            
-		            <input type="text" placeholder="Search..."/>                   
-                </div>
-        
-            <!-- search  -->
-
             <!-- TABLE -->
-                <div id="inv_tbl">
-                
-                    <table class="table table-striped" id="tblSearch">
-	                    <thead>
-		                    <tr>
-			                    <th>Product Name</th>
-			                    <th>Supplier Name</th>
-			                    <th>Category</th>
-			                    <th>Unit Price</th>
-			                    <th>Retail Price</th>
-			                    <th>Est. profit per unit</th>			
-			                    
-		                    </tr>
-	                    </thead>
-	
-	                    <tbody>
-	                        <?php foreach($allInfo as $info): ?>
-	                            <tr>
-	                                <td> <?= $info['product'] ?> </td>
-	                                <td> <?= $info["supplier_name"] ?> </td>
-	                                <td> <?= $info["category"] ?> </td>
-	                                <td>$ <?= $info["unit_price"] ?> </td>
-	                                <td>$ <?= $info["retail_price"] ?> </td>
-	                                <td>$ <?= number_format(($info["unit_price"] - $info["retail_price"]), 2) ?></td>
-                                    <td> <span class="td_link"><a href="edit_inv.php?product=<?= $info['product']?>">Edit</a></span> </td>
-                                    <td> <span class="td_link"><a href="del_inv.php?product=<?= $info['product']?>">Delete</a></span></td>
-
-	                            </tr>
-	                        <?php endforeach ?>
-
-
-	                    </tbody>
+              <div id="dataTbl">
+                    <table id="example" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>First name</th>
+                                <th>Last name</th>
+                            </tr>
+                        <thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                            </tr>
+                        </tfoot>
+                        
+                        <tbody>
+                            <tr>
+                                <td>Tiger NIxon</td>
+                                <td>Systems architect</td>
+                            </tr>
+                        </tbody>
                     </table>
-              </div>
-        </div>
-</div>
+              </div> <!-- collapse dataTbl-->
+        </div> <!--collapse content -->
+</div><!-- collapse mid -->
+
+<script>
+    $(document).ready(function() {
+        $('example').DataTable();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
