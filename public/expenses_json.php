@@ -1,22 +1,22 @@
 <?php
     /**
-     *  json.php
-     *  sample test to generate json data from balance databases
+     *  expenses_json.php
+     *  json data of expenses from transactions table
      */
 
     // configuration
 	require("../includes/config.php");
 	
-	$users = [];
+	$exp_json = [];
 	
 	// search database
-	$search = query("SELECT trans_sub_cat, trans_amount FROM `transactions` WHERE `id` = ? AND trans_category = 'expense'", $_SESSION["id"]);
-	if($search !== false)
+	$getExp = query("SELECT trans_time, trans_name, trans_sub_cat, trans_amount FROM `transactions` WHERE `id` = ? AND trans_category = 'expense'", $_SESSION["id"]);
+	if($getExp !== false)
 	{
-	    $users = $search;
+	    $exp_json = $getExp;
 	
 	    // output as JSON
 	    header("Content-type: application/json");
-	    print(json_encode($users, JSON_PRETTY_PRINT));
+	    print(json_encode($exp_json, JSON_PRETTY_PRINT));
 	}
 ?>

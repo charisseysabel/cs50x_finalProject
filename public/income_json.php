@@ -10,7 +10,7 @@
 	$users = [];
 	
 	// search database
-	$search = query("SELECT trans_sub_cat, trans_amount FROM `transactions` WHERE `id` = ? AND trans_category = 'income'", $_SESSION["id"]);
+	$search = query("SELECT trans_name, trans_sub_cat, trans_amount, trans_time FROM `transactions` WHERE `id` = ? AND trans_category = 'income'", $_SESSION["id"]);
 	if($search !== false)
 	{
 	    $users = $search;
