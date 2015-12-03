@@ -3,8 +3,9 @@
 	<head>
 
 		<!-- various CSS files/libraries -->
-		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
+		    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/bs/pdfmake-0.1.18,dt-1.10.10,b-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,r-2.0.0,rr-1.1.0,se-1.1.0/datatables.min.css"/>
 
         <!-- fonts -->
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -13,10 +14,9 @@
         <!-- dashboard styles -->
         <link href="/css/dash_style.css" rel="stylesheet"/>
         
-        <!-- inventory styles + datatables css-->
+        <!-- datatables css-->
         <link href="/css/inv_style.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.css">
-
+        
         <!-- set the title dynamically through PHP -->
         <?php if(isset($title)): ?>
         	<title>CS50x: Balance | <?= htmlspecialchars($title) ?></title>
@@ -25,11 +25,11 @@
     	 <?php endif ?>
 
     	<!-- scripts + datatables-->
-    	<script src="/js/jquery-1.11.1.js"></script>
-    	<script src="/js/jquery-1.11.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/s/bs/pdfmake-0.1.18,dt-1.10.10,b-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,r-2.0.0,rr-1.1.0,se-1.1.0/datatables.min.js"></script>
         <script src="/js/scripts.js"></script>
-      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+      
               
         <!-- CASHFLOW TAB: chart.js by Nick Downie -->
         <script src="/js/Chart.js"></script>
@@ -38,7 +38,7 @@
 
 	</head>
 
-	<body onload="time(); date(); setInterval('time()', 1000)">
+	<body>
 
            		<div class="menu_panel">
            			<div id="menu">
@@ -46,8 +46,9 @@
 		                    <li><a href="dashboard.php"> Dashboard </a></li>
 		                    <li><a href="cashflow.php"> Cashflow </a></li>
 		                    <li><a href="inventory.php"> Inventory </a></li>
-		                    <li><a href="transactions.php"> Transactions </a></li>
-
+		                    <li><a href="income.php"> Income </a></li>
+		                    <li><a href="expense.php"> Expense </a></li>		                    
+		                  <!--  <li><a href="transactions.php"> Transactions </a></li> -->
 		                </ul>
                 	</div>
                 	
