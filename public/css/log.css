@@ -16,6 +16,11 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 #navigation {
+    background: #fff;
+    border: none !important;
+}    
+
+#navigation {
     height: 80px;
 }
 
@@ -38,14 +43,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar ul li a{
-    color: #ffffff;
+    color: #2fc3d4;
     padding: 10px;
     text-decoration: none;
 }
 
 #navbar ul li a:hover {
     text-decoration: none;
-    color: #2fc3d4;
+    color: #e9662c;
 }
 
 /**
