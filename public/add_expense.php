@@ -51,14 +51,22 @@
 	    // check expense sub category
 	    if(!empty($_POST["exp_sub_cat"]) )
 	    {
-	        $add_exp = query("UPDATE `transactions` SET `trans_sub_cat` = ? WHERE `trans_name` = ?", $_POST["exp_sub_cat"], $_POST["trans_name"]);
-	        if($add_exp === false)
+	        $add_subCat = query("UPDATE `transactions` SET `trans_sub_cat` = ? WHERE `trans_name` = ?", $_POST["exp_sub_cat"], $_POST["trans_name"]);
+	        if($add_subCat === false)
 	        {
 	            apologize("Error adding expense transaction sub category");
 	        }
 	    }
+	    else
+	    {
+	        $add_subCat = query("UPDATE `transactions` SET `trans_sub_cat` = 'Others' WHERE `trans_name` = ?", $_POST["trans_name"]);
+	        if($add_subCat === false)
+	        {
+	            apologize("Error adding expense transaction without a sub category value");
+	        }
+	    }
 	    
-		redirect("transactions.php");
+		redirect("expense.php");
 	
 	}
 ?>

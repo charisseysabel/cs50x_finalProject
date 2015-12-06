@@ -58,7 +58,7 @@
 	        }
 	    }
 	    
-		redirect("transactions.php");
+		redirect("income.php");
 	
 	}
 ?>

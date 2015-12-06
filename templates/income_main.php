@@ -21,18 +21,18 @@
 			<table id="income_table_id" class="table table-striped" cellspacing="0" width="100%">
             	<thead>
 	                <tr>
+	                    <th>Date</th>
 						<th>Transaction</th>
                         <th>Sub-category</th>
-                        <th>Amount</th>
-                        <th>Date</th>
+                        <th class="cash_inc">Amount</th>
                     </tr>
                 <thead>
                 <tfoot>
                     <tr>
+                        <th>Date</th>
                         <th>Transaction</th>
                         <th>Sub category</th>
-                        <th>Amount</th>
-                        <th>Date</th>
+                        <th class="item_inc">Amount</th>
                    </tr>
                </tfoot>
                <tbody>

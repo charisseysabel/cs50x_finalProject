@@ -24,7 +24,7 @@
                         <th>Date</th>	                
 						<th>Transaction</th>
                         <th>Sub-category</th>
-                        <th>Amount</th>
+                        <th class="cash_exp">Amount</th>
                     </tr>
                 <thead>
                 <tfoot>
@@ -32,7 +32,7 @@
                         <th>Date</th>	                
 						<th>Transaction</th>
                         <th>Sub-category</th>
-                        <th>Amount</th>
+                        <th class="item_exp">Amount</th>
                    </tr>
                </tfoot>
                <tbody>
