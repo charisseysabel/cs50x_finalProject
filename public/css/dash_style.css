@@ -170,6 +170,14 @@ h2 {
     height: 50%;
 }
 
+.cash_inc, .item_inc {
+    color: rgba(49, 189, 193, 1);
+}
+
+.cash_exp, .item_exp {
+    color: rgba(245, 134, 37, 1);
+}
+
 
 /**
  *  transactions tab

@@ -2,18 +2,11 @@
  *  inv_style.css
  *  styles for the inventory page
  */
- 
-#search_form {
-    margin-bottom: 30px;
-    float: right;
-    display: inline;    
-}
 
 .inv_btn {
-    float: right;
     width: 400px;
-    margin-bottom: 20px;
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
     color: #ababab;
 }
 
@@ -22,7 +15,7 @@
     padding: 12px;
 }
 
-.inv_btn a:hover, .inv_btn select:hover, .inv_btn #search_btn:hover {
+.inv_btn a:hover {
     color: #2fc3d4;
     text-decoration: none;
 }
@@ -34,17 +27,6 @@
     width: 80px;
 }
 
-#filter {
-    width: 100px;
-    display: inline-block;
-    background: none;
-    border: none;
-    padding: 8px;
-}
-
-#filter option {
-    color: #2fc3d4;
-}
 
 .btn:hover{
     background: none;
