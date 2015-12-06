@@ -16,8 +16,8 @@
 	        <thead>
 		        <tr>
 			        <th>Beginning Cash on Hand</th>
-			        <th>Total Income</th>
-			        <th>Total Expenses</th>
+			        <th class="cash_inc">Total Income</th>
+			        <th class="cash_exp">Total Expenses</th>
 			        <th>Ending Cash on Hand</th>
 		        </tr>
 	        </thead>
@@ -26,14 +26,11 @@
 	                         
 	            <tr>
 	                 <?php foreach($cash as $data): ?>
-	                    <td>$ <?= $data["cash_on_hand"] ?></td>
+	                    <td> <?= $data["cash_on_hand"] ?></td>
 	                 <?php endforeach ?>
-	                                
-	                 <?php foreach($stats as $info): ?>    
-	                     <td>$ <?= $info["SUM(trans_amount)"]?></td>
-	                 <?php endforeach ?>
-	                            
-	                     <td>$ profit</td>
+	                    <td class="item_inc"><?= htmlspecialchars($totInc)?></td>
+	                    <td class="item_inc"><?= htmlspecialchars($totExp)?></td>
+	                    <td><?= htmlspecialchars($profit)?></td>
 	            </tr>
 	                           
 	        </tbody>
@@ -45,27 +42,21 @@
             <thead>
                 <tr>
                     <th>Month</th>
-                    <th>Income</th>
-                    <th>Expense</th>
+                    <th class="cash_inc">Income</th>
+                    <th class="cash_exp">Expense</th>
                     <th>Profit</th>
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($allMonths as $item): ?>
                 <tr>
-                    <td>November</td>
-                    <td>income for november</td>
-                    <td>expenses for november</td>
-                    <td>profit at the end of the month</td>
+                    <td><?= $item[0]	?></td>
+                    <td class="item_inc"><?= $item[1]	?></td>
+                    <td class="item_exp"><?= $item[2]	?></td>
+                    <td><?= $item[3] ?></td>
                 </tr>
+                <?php endforeach ?>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td>Average</td>
-                    <td>average income</td>
-                    <td>average expense</td>
-                    <td>average profit</td>
-                </tr>
-            </tfoot>
         </table>
     
 </div>
@@ -77,6 +68,20 @@
 <script>
 
     // bar chart
+    $.getJSON("cash_chart_json.php", function(result) {
+    var expenses = [], income = [];
+    for(i = 0; i < result.length;  i++)
+    {
+        if(i < 12)
+        {
+            expenses.push(result[i]);
+        }
+        else
+        {
+            income.push(result[i]);
+        }
+    }
+
     var data = {
 		labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
 		datasets: [
@@ -84,13 +89,13 @@
 				label: "cash_in",
 				fillColor: "rgba(49, 189, 193, 1)",
 				highlightFill: "rgba(59, 227, 232, 1)",
-				data: [287.30 , 319, 220, 239, 237, 272.20]
+				data: income
 			},
 			{
 				label: "cash_out",
 				fillColor: "rgba(245, 134, 37, 1)",
 				highlightFill: "rgba(255, 146, 39, 1)",
-				data: [169.70, 134.70, 111, 113.60, 75.60, 94.30]
+				data: expenses
 			}
 			
 		]
@@ -102,5 +107,7 @@
 	
 	var ctx = document.getElementById("myChart").getContext("2d");
 	new Chart(ctx).Bar(data);
+	
+	});
 </script>
 

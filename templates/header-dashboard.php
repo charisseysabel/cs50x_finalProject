@@ -28,6 +28,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/s/bs/pdfmake-0.1.18,dt-1.10.10,b-1.1.0,b-flash-1.1.0,b-html5-1.1.0,b-print-1.1.0,r-2.0.0,rr-1.1.0,se-1.1.0/datatables.min.js"></script>
+        <script type="text/javascript" src="/js/dataTables.editor.js"></script>
         <script src="/js/scripts.js"></script>
       
               
